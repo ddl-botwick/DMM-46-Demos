@@ -19,11 +19,11 @@ import datetime
 
 bucket = '<s3-bucket-name>'
 model_id = '<dmm-model-id>'
-
 dmm_api_key = os.environ.get('DMM_API_TOKEN')
+daily_data_path = '/mnt/CustomerChurn46/DailyData/'
 
 #Bring in data used to train pickled model that is loaded in later
-df = pd.read_csv('/mnt/Test&TrainData/smallPrepared.csv')
+df = pd.read_csv('/mnt/Test&TrainData/ChurnTrainingDataPP.csv')
 print(df.shape)
 
 #append data to istelf to double volume
@@ -122,11 +122,11 @@ idCheck= (churn_inputs_and_preds.custid.sort_values()==churn_groundTruth.custid.
 print('ID Check Pass:', idCheck)
 
 #Write input and pred data to DailyData folder
-input_and_pred_path = str('/mnt/CustomerChurn46/DailyData/inputs_and_preds_'+str(datetime.date.today())+'.csv')
+input_and_pred_path = str(daily_data_path+'inputs_and_preds_'+str(datetime.date.today())+'.csv')
 churn_inputs_and_preds.to_csv(input_and_pred_path, index = False)
 
 #Write GT data to DailyData folder
-ground_truth_path = str('/mnt/CustomerChurn46/DailyData/ground_truth_'+str(datetime.date.today())+'.csv')
+ground_truth_path = str(daily_data_path+'ground_truth_'+str(datetime.date.today())+'.csv')
 churn_groundTruth.to_csv(ground_truth_path, index = False)
 
 #Upload input&pred data and GT data to s3 bucket 
