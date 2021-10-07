@@ -1,3 +1,4 @@
+
 import pandas as pd
 import numpy as np
 import random
@@ -14,8 +15,11 @@ import datetime
 ## FOR demo.ddl (DMM in Domino 4.6)
 ## USING CHURN-DMM-46 BUCKET
 
-bucket = 'churn-dmm-46'
-model_id = '6144a2b341cd753ec8c34eff'
+
+
+bucket = '<s3-bucket-name>'
+model_id = '<dmm-model-id>'
+
 dmm_api_key = os.environ.get('DMM_API_TOKEN')
 
 #Bring in data used to train pickled model that is loaded in later
