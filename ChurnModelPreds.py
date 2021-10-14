@@ -14,8 +14,6 @@ import datetime
 ## FOR demo.ddl (DMM in Domino 4.6)
 ## USING CHURN-DMM-46 BUCKET
 
-
-
 bucket = '<s3-bucket-name>'
 model_id = '<dmm-model-id>'
 dmm_api_key = os.environ.get('DMM_API_TOKEN')
