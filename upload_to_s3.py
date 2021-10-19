@@ -29,25 +29,25 @@ def upload(local_file, bucket):
         return False
 
 ## NOT using or updating the below function (updated 10/12/2021)
-def split_data_export(df,n,prefix):
-    arrays = np.array_split(df,n)
-    df_dict = {}
-    file_names = list()
+# def split_data_export(df,n,prefix):
+#     arrays = np.array_split(df,n)
+#     df_dict = {}
+#     file_names = list()
     
-    for i in range(n):
-        df_dict["partition{0}".format(i+1)] = arrays[i]
+#     for i in range(n):
+#         df_dict["partition{0}".format(i+1)] = arrays[i]
    
-    for key, value in df_dict.items():
-        if n ==1:
-            #name = f'/mnt/Churn_Prediction&GroundTruthData/{prefix}_{date.today()}.csv'
-            #name = os.environ['DOMINO_WORKING_DIR']+'/temp/{0}_{1}.csv'.format(prefix,date.today())
-            name = f'/domino/datasets/{domino_user}/{domino_project}/scratch/{prefix}_{date.today()}.csv')
-        else:
-            #name = f'/mnt/Churn_Prediction&GroundTruthData/{prefix}_{key}_{date.today()}.csv'
-            name =f'/domino/datasets/{domino_user}/{domino_project}/scratch/{prefix}_{key}_{date.today()}.csv')
+#     for key, value in df_dict.items():
+#         if n ==1:
+#             #name = f'/mnt/Churn_Prediction&GroundTruthData/{prefix}_{date.today()}.csv'
+#             #name = os.environ['DOMINO_WORKING_DIR']+'/temp/{0}_{1}.csv'.format(prefix,date.today())
+#             name = f'/domino/datasets/{domino_user}/{domino_project}/scratch/{prefix}_{date.today()}.csv')
+#         else:
+#             #name = f'/mnt/Churn_Prediction&GroundTruthData/{prefix}_{key}_{date.today()}.csv'
+#             name =f'/domino/datasets/{domino_user}/{domino_project}/scratch/{prefix}_{key}_{date.today()}.csv')
             
-        print('CSV name: ', name)
-        file_names.append(name)   
-        value.to_csv(name, index = False)
+#         print('CSV name: ', name)
+#         file_names.append(name)   
+#         value.to_csv(name, index = False)
  
-    return file_names
+#     return file_names
