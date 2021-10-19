@@ -21,6 +21,7 @@ daily_data_path = '/mnt/CustomerChurn46/DailyData/'
 
 #Bring in data used to train pickled model that is loaded in later
 df = pd.read_csv('/mnt/Test&TrainData/ChurnTrainingDataPP.csv')
+df.drop('predictionProbability', axis =1,inplace = True)
 print(df.shape)
 
 #append data to istelf to double volume
