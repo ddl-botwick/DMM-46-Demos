@@ -1,0 +1,13 @@
+{
+
+    "datasetDetails": {
+        "name": "inputs_and_preds_2021-09-16.csv",
+        "datasetType": "file",
+        "datasetConfig": {
+            "path": "inputs_and_preds_2021-09-16.csv",
+            "fileFormat": "csv"
+        },
+        "datasourceName": "churn-dmm-46",
+        "datasourceType": "s3"
+    }
+}
