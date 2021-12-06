@@ -1,4 +1,12 @@
 {
+    "variables": [
+        {
+            "valueType": "categorical",
+            "variableType": "ground_truth",
+            "name": "y_gt",
+            "forPredictionOutput": "churn_Y"
+        }
+    ],
 
     "datasetDetails": {
         "name": "ground_truth_2021-09-16.csv",
