@@ -1,0 +1,13 @@
+{
+
+    "datasetDetails": {
+        "name": "ground_truth_2021-09-16.csv",
+        "datasetType": "file",
+        "datasetConfig": {
+            "path": "ground_truth_2021-09-16.csv",
+            "fileFormat": "csv"
+        },
+        "datasourceName": "churn-dmm-46",
+        "datasourceType": "s3"
+    }
+}
