@@ -16,7 +16,7 @@ import datetime
 
 bucket = '<s3-bucket-name>'
 model_id = '<dmm-model-id>'
-dmm_api_key = os.environ.get('DMM_API_TOKEN')
+dmm_api_key = os.environ.get('DOMINO_USER_API_KEY')
 daily_data_path = '/mnt/CustomerChurn46/DailyData/'
 
 #Bring in data used to train pickled model that is loaded in later
@@ -154,9 +154,9 @@ inputs_payload = """
 #Define api endpoint
 inputs_url = "https://demo.dominodatalab.com/model-monitor/v2/api/model/{}/register-dataset/prediction".format(model_id)
 
-#Set up call headers
+#Set up call headers for 5.6 versions
 headers = {
-           'X-DMM-API-KEY': dmm_api_key,
+           'X-Domino-Api-Key': dmm_api_key,
            'Content-Type': 'application/json'
           }
 #Make API call
